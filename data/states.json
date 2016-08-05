@@ -1,0 +1,57 @@
+{
+	"2014":[
+	    {"state":"Texas", "number":7466},
+	    {"state":"California", "number":6379},
+	    {"state":"Michigan", "number":4651},
+	    {"state":"New York", "number":3965},
+	    {"state":"Florida", "number":3613},
+		{"state":"Arizona", "number":3052},
+		{"state":"Ohio", "number":2788},
+		{"state":"Georgia", "number":2710},
+		{"state":"Pennsylvania", "number":2507},
+		{"state":"Illinois", "number":2452},
+		{"state":"other", "number":30326}
+	],
+	
+	"2013":[
+	    {"state":"Texas", "number":7214},
+	    {"state":"California", "number":6108},
+	    {"state":"Michigan", "number":4006},
+	    {"state":"New York", "number":4082},
+	    {"state":"Florida", "number":3519},
+		{"state":"Arizona", "number":2964},
+		{"state":"Ohio", "number":2815},
+		{"state":"Georgia", "number":2694},
+		{"state":"Pennsylvania", "number":2739},
+		{"state":"Illinois", "number":2578},
+		{"state":"other", "number":31019}
+	],
+
+	"2012":[
+	    {"state":"Texas", "number":5905},
+	    {"state":"California", "number":5167},
+	    {"state":"Michigan", "number":3594},
+	    {"state":"New York", "number":33525},
+		{"state":"Florida", "number":2244},
+		{"state":"Arizona", "number":2234},
+		{"state":"Ohio", "number":2245},
+		{"state":"Georgia", "number":2516},
+		{"state":"Pennsylvania", "number":2809},
+		{"state":"Illinois", "number":2082},
+		{"state":"other", "number":25858}
+	],
+
+	"2011":[
+	    {"state":"Texas", "number":5627},
+	    {"state":"California", "number":4987},
+	    {"state":"Michigan", "number":2588},
+	    {"state":"New York", "number":3529},
+	    {"state":"Florida", "number":2906},
+	    {"state":"Arizona", "number":2168},
+	    {"state":"Ohio", "number":1691},
+	    {"state":"Georgia", "number":2636},
+		{"state":"Pennsylvania", "number":2972},
+		{"state":"Illinois", "number":1937},
+		{"state":"other", "number":25343}
+	]
+}

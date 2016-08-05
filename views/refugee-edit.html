@@ -1,0 +1,97 @@
+<form name="refugee_form" class="refugee-form" novalidate data-ng-submit="addEditedRefugee()" style="background-color:white;">
+  <img src="images/arrow-back.png" style="cursor:pointer;float:left;" alt="Back" height="25" width="25" ng-click="backButton()"></img>
+  <fieldset>
+    <legend>Edit Section</legend>
+
+    <div class="large-12 columns">
+
+      <div class="form-group">
+        <label class="col-sm-4 text-right control-label">Country</label>
+        <div class="col-sm-8 ">
+          <input type="text" placeholder="Refugee's country name" name="country" data-ng-model="editObj.refugeeCountryEdit" ng-minlength=3 ng-maxlength=30 required ng-focus />
+        
+          <div class="error" ng-show="refugee_form.country.$dirty && refugee_form.country.$invalid && !refugee_forrefugeem.country.$focused">
+            <small class="error" 
+              ng-show="refugee_form.country.$error.required">
+              Refugee name is required.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.country.$error.minlength">
+              Refugee name is required to be at least 3 characters
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.country.$error.maxlength">
+              Refugee name cannot be longer than 20 characters
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+         <label class="col-sm-4 text-right control-label">Year</label>
+        <div class="col-sm-8 ">
+          <input type="text" placeholder="Year refugee entered US" name="year" data-ng-model="editObj.refugeeYearEdit" ng-minlength=3 ng-maxlength=4 required ng-focus ng-format="editObj.refugeeYearEdit"/>
+        
+          <div class="error" ng-show="refugee_form.year.$dirty && refugee_form.year.$invalid && !refugee_form.year.$focused">
+            <small class="error" 
+              ng-show="refugee_form.year.$error.required">
+              Refugee year is required.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.year.$error.minlength">
+              Refugee year is required to be at least 3 characters.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.year.$error.ngformat">
+              Refugee year should be a 'year' and start from 2001.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.year.$error.maxlength">
+              Refugee year cannot be longer than 4 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+         <label class="col-sm-4 text-right control-label">Number</label>
+        <div class="col-sm-8 ">
+          <input type="text" placeholder="Number of refugees" name="number" data-ng-model="editObj.refugeeNumberEdit" ng-maxlength=4 required ng-focus />
+        
+          <div class="error" ng-show="refugee_form.number.$dirty && refugee_form.number.$invalid && !refugee_form.number.$focused">
+            <small class="error" 
+              ng-show="refugee_form.number.$error.required">
+              Refugee number is required.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.number.$error.maxlength">
+              Refugee number cannot be longer than 4 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+         <label class="col-sm-4 text-right control-label">Reason</label>
+        <div class="col-sm-8 ">
+          <input type="text" placeholder="Reason for status" name="reason" data-ng-model="editObj.refugeeReasonEdit" ng-minlength=2 ng-maxlength=15  ng-focus />
+        
+          <div class="error" ng-show="refugee_form.reason.$dirty && refugee_form.reason.$invalid && !refugee_form.reason.$focused">
+            
+            <small class="error" 
+              ng-show="refugee_form.reason.$error.minlength">
+              Refugee reason is required to be at least 3 characters.
+            </small>
+            <small class="error" 
+              ng-show="refugee_form.reason.$error.maxlength">
+              Refugee reason cannot be longer than 15 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+    <button ng-disabled="!refugee_form.$valid" type="submit" class="btn btn-info btn-sm">Save</button>
+  </fieldset>
+</form>

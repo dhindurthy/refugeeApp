@@ -1,0 +1,102 @@
+<section class="page-body" style="">
+  <div class="large-12 columns">
+    <div class="col-sm-offset-2 col-sm-8" style="background-color:white;margin-top:0px;">
+      <p><span style="float:right;cursor:pointer;"><img src="images/charts-combo-icon.png" alt="Charts" height="35" width="35" class="" ng-click="dashboardNav()"></img></span></p>
+      <label>{{t.refugees_search}}: <input ng-model="search.country"></label>
+
+      <table class="table" role="" ng-init="refugees" >
+        <tr tabindex="0" aria-label="" data-ng-repeat="refugee in refugees | filter:search:strict track by $index ">
+          <td>
+            <span class="refugee-country">{{refugee.country}}</span>
+            <sup>
+              <span class="glyphicon glyphicon-info-sign" style="cursor:pointer;" ng-click="infoRefugee($index);" aria-hidden="true"></span>
+            </sup>
+          </td>
+          <td style="text-align: left;"><span class="glyphicon glyphicon-edit" style="cursor:pointer;" ng-click="editRefugee($index)" ></span></td>
+          <td style="text-align: right;"><span href="" data-ng-click="archiveIndividual($index)" style="cursor:pointer;" class="glyphicon glyphicon-trash"></span></td>
+          <td style="text-align: center;"><input type="checkbox" data-ng-model="refugee.done"></td>
+        </tr>
+        <tr>
+          <td><button  ng-click="addRefugeeAction()" type="button" value="" class="btn btn-primary btn-md">{{t.refugees_addRefugeeData}}</button></td>
+          <td></td>
+          <td></td>
+          <td style="text-align: right;"><button href="" data-ng-click="archive()" class="btn btn-danger btn-md" >{{t.refugees_delete}} {{remaining()}} {{t.refugees_of}} {{refugees.length}}</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+<br><br>
+  <div class="large-12 columns" >
+    <div ng-show="refugeeInfo" class="info col-sm-offset-4 col-sm-4" style="background-color:white;">
+      <!--<label>Search: <input ng-model="search.country"></label>-->
+      <button class="btn btn-default" style="float:right;" ng-click="closeInfo(); ">X</button>
+      <table class="table" role="" >
+        <tr>
+          <td>Country</td>
+          <td>Year</td>
+          <td>Number</td>
+          <td>Reason</td>
+          <!--<td>State</td>-->
+        </tr>
+          
+        <tr tabindex="0" aria-label="" ><!--data-ng-repeat="refugee in infoObj"-->
+          <td>{{infoObj.refugeeCountryInfo}}</td>
+          <td>{{infoObj.refugeeYearInfo}}</td>
+          <td>{{infoObj.refugeeNumberInfo}}</td>
+          <td>{{infoObj.refugeeReasonInfo}}</td>
+          <!--<td>{{infoObj.refugeeStateInfo}}</td>-->
+        </tr>
+      </table>
+    </div>
+  </div>
+<br><br>
+  <div class="large-12 columns">
+    <span class="col-sm-offset-2 col-sm-8 columns">
+      <button href="" data-ng-click="data2011()" class="btn btn-default btn-xs">2011</button>
+      <button href="" data-ng-click="data2012()" class="btn btn-default btn-xs">2012</button>
+      <button href="" data-ng-click="data2013()" class="btn btn-default btn-xs">2013</button>
+      <button href="" data-ng-click="data2014()" class="btn btn-default btn-xs">2014</button>
+      <button href="" data-ng-click="data2015()" class="btn btn-default btn-xs">2015</button>
+    </span>
+  </div>
+<br>
+  <div class="large-12 columns" style="cursor:alias;">
+    <div class="chart-container col-sm-offset-2 col-sm-8 columns" id="chart-toggle" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+        <div class="front" style="background-color:black;">
+          <table style="float:left;width:95%;border:3px solid #EFEFEF;margin-top:6px;margin-right:6px;margin-bottom:6px; border-collapse:separate;border-radius:7px;border-spacing:0;-moz-border-radius:5px;padding:0px;margin-left:20px;">
+            <thead>
+             <th class="chart-heading" colspan="1">
+              <span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;color:black;">Data</span>
+            </th>
+            </thead>
+            <tr>
+              <td>
+                <div id="dataChart" style="height:300px;width:100%;"></div>  
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="back" style="background-color:black;">
+          <table class="table" role="" ng-init="refugees" >
+            <tr>
+              <td>Country</td>
+              <td>Year</td>
+              <td>Number</td>
+              <td>Reason</td>
+              <!--<td>State</td>-->
+            </tr>
+            <tr tabindex="0" aria-label="" data-ng-repeat="refugee in refugees | filter:search:strict track by $index ">
+              <td>{{refugee.country}}</td>
+              <td>{{refugee.year}}</td>
+              <td>{{refugee.number}}</td>
+              <td>{{refugee.reason}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<button onclick="document.querySelector('#chart-toggle').classList.toggle('hover');" class="sexyButton">Toggle Flip</button>-->
+</section>

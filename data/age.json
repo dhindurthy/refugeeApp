@@ -1,0 +1,31 @@
+{
+	"2013":[
+	    {"age":"0to17", "number":23647},
+	    {"age":"18to24", "number":10399},
+	    {"age":"25to34", "number":15328},
+	    {"age":"35to44", "number":9543},
+	    {"age":"45to54", "number":5504},
+	    {"age":"55to64", "number":3098},
+	    {"age":"65+", "number":2390}
+	],
+
+	"2012":[
+	    {"age":"0to17", "number":18876},
+	    {"age":"18to24", "number":9700},
+	    {"age":"25to34", "number":13491},
+	    {"age":"35to44", "number":7446},
+	    {"age":"45to54", "number":4409},
+	    {"age":"55to64", "number":2441},
+	    {"age":"65+", "number":1816}
+	],
+
+	"2011":[
+	    {"age":"0to17", "number":19232},
+	    {"age":"18to24", "number":9588},
+	    {"age":"25to34", "number":11802},
+	    {"age":"35to44", "number":7124},
+	    {"age":"45to54", "number":4230},
+	    {"age":"55to64", "number":2438},
+	    {"age":"65+", "number":1970}
+	]
+}

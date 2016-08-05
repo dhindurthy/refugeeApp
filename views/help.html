@@ -1,0 +1,95 @@
+<div style="width:100%;">
+	<header class="grsPageHeader">
+    </header>
+   <!--****** Main Content *********-->
+    <div class="grsSectionsContainer col-sm-offset-1 col-sm-10 columns">      
+		<div role="tabpanel" style="margin: 0 auto;">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a data-target="#home" aria-controls="home" role="tab" data-toggle="tab">FAQ</a></li>
+			<li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Questions and Feedback</a></li>
+		  </ul>
+
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="home">
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" data-target = "#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						  What is the website about?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="panel-body">
+						The website is to expose the functionalities that can be implemented using AngularJS for various puposes, in this case its used to perform Create-Read-Updat-Delete functionalities.As a bonus it displays the data of the refugees in the "dashboard" part for the years specified(this is genuine data).
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingTwo">
+					  <h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						  What technologies are used in this website?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					  <div class="panel-body">
+						The whole website is built on AngularJS framework version 1.4.5.
+						<br>
+						Charts are built using the third party tool Highcharts.
+						<br>
+						The styling part is handled by the Bootstrap framework version 3.1.1. We use the bootstrap implementation of the layout to support mobile platform usage of the site.
+						<br>
+						The HTML 5 and CSS 3 are used to build and the Local Storage which is the feature of HTML 5 is being used here to store the data whenever user inputs are given.
+						<br>
+						The data being displayed in the charts section is stored in 'json' files and it is accessed by appropriate methods in the code.
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingThree">
+					  <h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						  How to interact with the site?
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					  <div class="panel-body">
+						After entering the section, you can find buttons to "Add" or "Delete" the data, and also for every data entry there is an invidual option to edit or delete that particular entry. On hitting the 'i' icon with every entry, the user can view the details of that entry. There is a chart below which updates by itself everytime a new entry is made and the buttons for years can be used to view chart for that particular year. On hovering on the chart , it flips to show the details of all the entries for all years made until that point of time.
+					  </div>
+					</div>
+				  </div>
+				  
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="profile">
+				<textarea rows="4" cols="90" data-ng-model="comment" placeholder="What do you think? Add a comment...">
+					
+				</textarea>
+				<button ng-disabled="" type="submit" class="btn btn-primary btn-sm" ng-click="addComment()">Post</button>
+				<table class="table" role="" ng-init="" style="">
+			        <tr tabindex="0" aria-label="" ng-repeat="commentObj in comments track by $index" style="height: 70px;background-color: black;">
+			        	<td style="vertical-align: middle;border-collapse:separate;border-radius:60px;border-spacing:0;-moz-border-radius:60px;padding:0px;"> 
+			        		<div style="color:gray;margin-top: 0;margin-bottom: 0;margin-right: 35px;margin-left:25px;">
+			        			<span style="font-size:10px;float:right;color:gray;">{{commentObj.date}}</span><br><br>
+			        			<span style="color:gray;"> {{commentObj.comment}}</span>
+			        		<br><br>
+			        			<span class="glyphicon glyphicon-arrow-up vote-up" style="margin-left:10px;cursor:pointer;margin-right:5px;" aria-hidden="true" ng-click="upVote($index)"></span><span>{{commentObj.upvote}}</span>
+			        			<span class="glyphicon glyphicon-arrow-down vote-down" style="margin-left:10px;cursor:pointer;margin-right:5px;" aria-hidden="true" ng-click="downVote($index)"></span><span>{{commentObj.downvote}}</span>
+			        		</div>
+			        	</td>
+			        </tr>
+			    </table>
+			</div>
+		  </div>
+		</div>				
+    </div>
+</div>

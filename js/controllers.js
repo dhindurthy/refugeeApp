@@ -1,0 +1,1 @@
+var refugeeControllers = angular.module('refugeeControllers', []);

@@ -1,0 +1,11 @@
+{
+	"devDependencies": {
+    	"grunt": "~0.4.5"
+	},
+	"engines": {
+	    "node": "^4.2.3",
+	    "npm": "^2.14.7"
+	},
+	"private": true
+
+ }

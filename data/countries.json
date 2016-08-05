@@ -1,0 +1,74 @@
+{
+	"2015":[
+		{"country":"Iraq", "number":12676},
+		{"country":"Burma", "number":18386},
+		{"country":"Bhutan", "number":5775},
+		{"country":"Somalia", "number":8858},
+		{"country":"Cuba", "number":1527},
+		{"country":"Iran", "number":3109},
+		{"country":"Syria", "number":1682},
+		{"country":"Congo Democratic Republic", "number":7876},
+		{"country":"Sudan", "number":1578},
+		{"country":"Eritrea", "number":1596},
+		{"country":"other", "number":6870}
+	],
+
+	"2014":[
+		{"country":"Iraq", "number":19769},
+		{"country":"Burma", "number":14598},
+		{"country":"Bhutan", "number":8434},
+		{"country":"Somalia", "number":9000},
+		{"country":"Cuba", "number":4062},
+		{"country":"Iran", "number":2846},
+		{"country":"Congo Democratic Republic", "number":4540},
+		{"country":"Sudan", "number":1315},
+		{"country":"Eritrea", "number":1488},
+		{"country":"Afghanistan", "number":753},
+		{"country":"other", "number":3182}
+	],
+
+	"2013":[
+		{"country":"Iraq", "number":19487},
+		{"country":"Burma", "number":16299},
+		{"country":"Bhutan", "number":9134},
+		{"country":"Somalia", "number":7608},
+		{"country":"Cuba", "number":4205},
+		{"country":"Iran", "number":2579},
+		{"country":"Congo Democratic Republic", "number":2563},
+		{"country":"Sudan", "number":2160},
+		{"country":"Eritrea", "number":1824},
+		{"country":"Ethiopia", "number":765},
+		{"country":"other", "number":3285}
+	],
+
+	"2012":[
+		{"country":"Iraq", "number":12163},
+		{"country":"Burma", "number":14160},
+		{"country":"Bhutan", "number":15070},
+		{"country":"Somalia", "number":4911},
+		{"country":"Cuba", "number":1948},
+		{"country":"Iran", "number":1758},
+		{"country":"Congo Democratic Republic", "number":1863},
+		{"country":"Sudan", "number":1077},
+		{"country":"Eritrea", "number":1346},
+		{"country":"Ethiopia", "number":620},
+		{"country":"other", "number":3263}
+	],
+
+	"2011":[
+		{"country":"Iraq", "number":9388},
+		{"country":"Burma", "number":16972},
+		{"country":"Bhutan", "number":14999},
+		{"country":"Somalia", "number":3161},
+		{"country":"Cuba", "number":2920},
+		{"country":"Iran", "number":2032},
+		{"country":"Congo Democratic Republic", "number":977},
+		{"country":"Sudan", "number":334},
+		{"country":"Eritrea", "number":2032},
+		{"country":"Ethiopia", "number":560},
+		{"country":"other", "number":3009}
+	]
+}
+
+
+

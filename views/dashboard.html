@@ -1,0 +1,110 @@
+<div style="width:100%;" class="refugee-dashboard">
+	<img src="images/arrow-back.png" style="cursor:pointer;margin-left: 45px;" alt="Back" height="25" width="25" ng-click="backButton()"></img>
+    <!--****** Main Content *********-->
+    <div class="large-12 columns">
+
+	   <!--GAUGES-->
+		<div style="width:100%;" class="">
+			<table style="margin-left: 45px;" class="rfgGauge">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">2011</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="gaugeRisk" style="width:150px;height:100px;margin: 0 auto"></div>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="rfgGauge">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">2012</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="gaugeAssets" style="width:150px;height:100px;margin: 0 auto"></div>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="rfgGauge">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">2013</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="gaugeEquity" style="width:150px;height:100px;margin: 0 auto"></div>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="rfgGauge">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">2014</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="gaugeFixedIncome" style="width:150px;height:100px;margin: 0 auto"></div>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="rfgGauge">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">2015</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="gaugeAlternative" style="width:150px;height:100px;margin: 0 auto"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!--HISTORY AND GROUP COLUMN-->
+		<div style="width:100%;" class="">
+			<table class="rfgHistory" style="width:55%;margin-right:6px;margin-left: 48px;">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;">History</span>
+					</th>
+				</thead>
+				<tr>
+					<td>
+						<div id="HistoryChart" style="height:300px;width:100%;"></div>	
+					</td>
+				</tr>
+			</table>
+			
+			<table class="rfgHistory" style="width:37%">
+				 <thead>
+					 <th class="chart-heading" colspan="1">
+						<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;" ng-click="showAge()">Age </span>
+						<!--<span style="float:left;padding-top:7px;padding-bottom:7px;font-size:12px;" ng-click="showGender()">Gender</span>-->
+					</th>
+				</thead>
+				<tr>
+					<td ng-show="detail" >
+						<div id="ageClass" style="width:100%;height:300px;margin:0 auto"></div>
+					</td>
+					<!--<td ng-hide="detail" >
+						<div id="genderClass" style="width:90%;height:300px;margin:0 auto"></div>
+					</td>-->
+				</tr>
+			</table>
+		</div>
+
+		<div id="bubbleChartEquity" style="width:95%;height:400px; margin:0 auto"></div>
+		
+    </div>
+</div>
