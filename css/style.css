@@ -17,7 +17,7 @@ background-color:white;
 float:left;
 width:15.75%;
 border:3px solid #EFEFEF;
-margin-right:45px;
+margin-right:3.7%;
 border-collapse:separate;
 border-radius:7px;
 border-spacing:0;
@@ -35,6 +35,17 @@ border-radius:7px;
 border-spacing:0;
 -moz-border-radius:5px;
 padding:0px;
+}
+
+.rfgHistoryTitle {
+
+}
+
+.chart-title {
+  float:left;
+  padding-top:7px;
+  padding-bottom:7px;
+  font-size:12px;
 }
 
 .rfgStateSingle{
