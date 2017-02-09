@@ -28,7 +28,7 @@ The website is to expose the functionalities that can be implemented using Angul
 ###Server
 * Node is used to create a server to host the app and on running the above mentioned steps as in the 'Running' section, the app can be accessed.
 * Running the app on node server enables the app to behave like its on a server host.
-*The following MIME types are accepted by this app:
+* The following MIME types are accepted by this app:
 "html": "text/html",
 "jpeg": "image/jpeg",
 "jpg": "image/jpeg",
@@ -48,3 +48,7 @@ The website is to expose the functionalities that can be implemented using Angul
 ##Additional Features
 
 * It displays the data of the refugees in the "dashboard" part for the years specified(this is genuine data) collected from variuos sites handled by both government of USA and alos private sites.
+
+##Note
+
+*This web app was developed in an intention of using the features provided by various technologies and not intended towards moving to a production environment. 
