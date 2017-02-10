@@ -211,6 +211,10 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 		});	
 	};
 	
+	/**
+	 * [lineChart Method to draw the line chart for respective year of the refugees]
+	 * @return {null} [null]
+	 */
 	$scope.lineChart = function(){
 		$scope.categories = countries;
    		$scope.data = countriesData;
