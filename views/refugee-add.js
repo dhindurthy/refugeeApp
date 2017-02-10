@@ -27,7 +27,10 @@ refugeeControllers.controller('refugeeAddController', ['$location','$rootScope',
     		}
 	    }*/
   	};
-  			
+  
+  /**
+   * [addRefugee Method to add a refugee when user hits the 'Add' button]
+   */
   $scope.addRefugee = function() {
 		$rootScope.refugees.push({
 			country: $scope.refugeeCountry,

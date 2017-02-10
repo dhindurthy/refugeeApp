@@ -12,6 +12,11 @@ refugeeControllers.controller('refugeeEditController', ['$location','$rootScope'
 	$scope.editObj={"refugeeCountryEdit":$scope.refugeeCountryEdit, "refugeeYearEdit":$scope.refugeeYearEdit,
 					"refugeeNumberEdit":$scope.refugeeNumberEdit,"refugeeReasonEdit":$scope.refugeeReasonEdit};
   	
+  	/**
+  	 * [backButton The method that executes when the 'Back'
+  	 *  button is hit that on the edit page]
+  	 * @return {null} [Null]
+  	 */
   	$scope.backButton=function(){
   		$rootScope.refugees.push({
 			country: $scope.refugeeCountryEdit,
@@ -24,6 +29,9 @@ refugeeControllers.controller('refugeeEditController', ['$location','$rootScope'
   		$location.path('/refugees');
   	};
 
+  	/**
+  	 * [addEditedRefugee Method that runs once user saves the detials after editing]
+  	 */
 	$scope.addEditedRefugee=function() {
 		$rootScope.refugees.push({
 			country: $scope.editObj.refugeeCountryEdit,
@@ -42,6 +50,10 @@ refugeeControllers.controller('refugeeEditController', ['$location','$rootScope'
 		$location.path('/refugees');
 	};
 
+	/**
+	 * [archive Archives the details of refugees]
+	 * @return {null} [Null]
+	 */
 	$scope.archive = function() {
 		var oldRefugees = $rootScope.refugees;
 		$rootScope.refugees = [];

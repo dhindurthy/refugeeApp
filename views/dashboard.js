@@ -5,6 +5,12 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
   		$location.path('/refugees');
   	};
   	/***************GAUGE CHART***************************************/
+  	/**
+  	 * $scope.gauge20xx();
+  	 * The below are functions that build the 'Guage' charts 
+  	 * available on the dashboard to show the number of refugees 
+  	 * in respective years
+  	 */
 	
 	$scope.gauge2011 = function() {	
 		$(document).ready(function () {
@@ -507,6 +513,12 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 	};
 
 	/***************HISTORY CHART***************************************/
+	/**
+  	 * $scope.historyChart();
+  	 * The below are functions that build the 'History' chart
+  	 * available on the dashboard to show the variation of number of refugees 
+  	 * in all the years. The lineChart() method just runs the function.
+  	 */
 	$scope.historyChart = function() {	
 			var chart;
 			$(document).ready(function() {
@@ -609,6 +621,11 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 			}, 1500);
 	};
 
+	/**
+	 * [gettingCountryData This is http call to retrieve the data for different 
+	 * countries and their data on refugee population each year]
+	 * @return {array} [array of Data]
+	 */
 	$scope.gettingCountryData = function() {
 		$scope.promise = $http.get('data/countries.json', {cache: true, withCredentials: true})
 			.success(function(data, status, headers, config) {
@@ -635,48 +652,88 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 	$scope.gettingCountryData();
 
 	/***************GROUP COLUMN CHART***************************************/
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 0-17 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.firstData = function() {
 		var firstData = [$scope.age2011[0].number,$scope.age2012[0].number,$scope.age2013[0].number];
 		
 		return firstData;
 	};
 	
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 18-24 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.secondData= function() {
 		var secondData = [$scope.age2011[1].number,$scope.age2012[1].number,$scope.age2013[1].number];
 		
 		return secondData;
 	};
-		
+
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 25-34 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.thirdData = function() {
 		var thirdData = [$scope.age2011[2].number,$scope.age2012[2].number,$scope.age2013[2].number];
 		
 		return thirdData;
 	};
 	
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 35-44 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.fourthData = function() {
 		var fourthData = [$scope.age2011[3].number,$scope.age2012[3].number,$scope.age2013[3].number];
 		
 		return fourthData;
 	};
 
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 45-54 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */ 
 	$scope.fifthData = function() {
 		var fifthData = [$scope.age2011[4].number,$scope.age2012[4].number,$scope.age2013[4].number];
 		
 		return fifthData;
 	};
 
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 55-64 for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.sixthData = function() {
 		var sixthData = [$scope.age2011[5].number,$scope.age2012[5].number,$scope.age2013[5].number];
 		
 		return sixthData;
 	};
 
+	/**
+	 * [firstData Function that groups the data of refugees of 
+	 * age 65+ for the years 2011,2012 and 2013]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.seventhData = function() {
 		var seventhData = [$scope.age2011[6].number,$scope.age2012[6].number,$scope.age2013[6].number];
 		
 		return seventhData;
 	};
 
+	/**
+	 * [ageColumn Function that draws the chart with above 
+	 * data which is grouped based on agaes of refugees and and the year]
+	 * @return {null} [Null]
+	 */
 	$scope.ageColumn = function() {
 		$(document).ready(function () {
 			// Instanciate the map
@@ -786,6 +843,11 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 		});
 	};
 
+	/**
+	 * [gettingAgeData The http method to retrieve data of 
+	 * number of refugees by thy year which already is seperated by their age]
+	 * @return {array} [nested array of data]
+	 */
 	$scope.gettingAgeData = function() {
 		$scope.promise = $http.get('data/age.json', {cache: true, withCredentials: true})
 			.success(function(data, status, headers, config) {
@@ -942,11 +1004,19 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 	};
 	//$scope.gettingGenderData();
 
+	/**
+	 * [showAge Scope variable to hide/show the age chart]
+	 * @return {boolean} [Boolean value to hide show age chart]
+	 */
 	$scope.showAge = function(){
 		$scope.detail =true;
 	};
 	$scope.showAge();
 
+	/**
+	 * [showGender Scope variable to hide/show the gender chart]
+	 * @return {boolean} [Boolean value to hide show gender chart]
+	 */
 	$scope.showGender= function(){
 		$scope.detail =false;
 		//$scope.gettingGenderData();
@@ -954,6 +1024,11 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 
 
 	/*******Bubble Chart************/
+	/**
+	 * [yearParameters Method to draw chart]
+	 * @param  {array} dataArray [Array that contains data]
+	 * @return {null}           [Null]
+	 */
 	$scope.yearParameters = function(dataArray){
 		var i;
 		for(i = 0; i < dataArray.length; i++){
@@ -970,6 +1045,10 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 		}
 	};
 
+	/**
+	 * [bubbleChart Method to draw bubble chart]
+	 * @return {null} [null]
+	 */
 	$scope.bubbleChart = function() {
 		var chart;
 		//console.log($scope.msciSectorData);
@@ -1113,6 +1192,10 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 		});
 	};
 
+	/**
+	 * [gettingStateData Method tro get data of refugees by states/years]
+	 * @return {null} [Null]
+	 */
 	$scope.gettingStateData = function() {
 		$scope.promise = $http.get('data/states.json', {cache: true, withCredentials: true})
 			.success(function(data, status, headers, config) {
@@ -1140,6 +1223,13 @@ refugeeControllers.controller('dashboardController', ['$location','$rootScope','
 			});
 	};
 
+	/**
+	 * [gettingTotalData Method to retrieve data of all the refugees  
+	 * for all the years which includes all agaes and geneders. 
+	 * There is a drilldown implementation in chart starting from 
+	 * the year to state to total refugees in taht year]
+	 * @return {null} [Null]
+	 */
 	$scope.gettingTotalData = function() {
 		$scope.promise = $http.get('data/total.json', {cache: true, withCredentials: true})
 			.success(function(data, status, headers, config) {

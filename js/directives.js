@@ -1,5 +1,13 @@
 var refugeeDirectives = angular.module('refugeeDirectives', []);
 
+/**
+ * 'ngState'
+ * This is the directive that watches any change in 'state' of the app.
+ * @param  {service} $rootScope [injection]
+ * @param  {service} $http      [injection]
+ * @param  {service} $location 	[injection]
+ * @return {parameters}         [restrict, link]
+ */
 refugeeDirectives.directive('ngState', ['$rootScope', '$http', '$location', function($rootScope, $http, $location) {
 
     return {
@@ -12,6 +20,13 @@ refugeeDirectives.directive('ngState', ['$rootScope', '$http', '$location', func
     };
 }]);
 
+/**
+ * 'ngFormat'
+ * The directive that performs validation for the 
+ * 'year' value of the data to make sure it is 
+ * in between 2001 and 2015
+ * 
+ */
 refugeeDirectives.directive('ngFormat', ['$rootScope', '$http', '$location', function($rootScope, $http, $location) {
 
     return {

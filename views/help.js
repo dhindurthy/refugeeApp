@@ -2,6 +2,11 @@ refugeeControllers.controller('helpController', ['$location','$rootScope','$scop
   function ($location,$rootScope,$scope, $http) {
 
   	$scope.saved = localStorage.getItem('comments');
+
+  	/**
+  	 * [comments Sets the default comments that are to be stored in localstorage]
+  	 * 
+  	 */
   	$rootScope.comments = (localStorage.getItem('comments')!==null) ? JSON.parse($scope.saved) : [ 
 		{
 			comment: 'The data displayed in dashboard is informative!',
@@ -12,6 +17,9 @@ refugeeControllers.controller('helpController', ['$location','$rootScope','$scop
 		} ];
 	localStorage.setItem('comments', JSON.stringify($rootScope.comments));
 
+	/**
+	 * [addComment Fucntion that grabs the new coment and stores it in localStorage]
+	 */
 	$scope.addComment = function() {
 		var months = new Array(12);
 		months[0] = "January";
@@ -51,6 +59,11 @@ refugeeControllers.controller('helpController', ['$location','$rootScope','$scop
 		//console.log($rootScope.comments);
 	};
 
+	/**
+	 * [upVote Method that saves the upvote made in a comment]
+	 * @param  {number} $index [Index of the comment in order to add the vote to taht comment]
+	 * @return {null}        [Null]
+	 */
 	$scope.upVote = function($index){
 		var oldUp = $rootScope.comments[$index].upvote;
 		var newUp = oldUp + 1;
@@ -58,6 +71,11 @@ refugeeControllers.controller('helpController', ['$location','$rootScope','$scop
 		localStorage.setItem('comments', JSON.stringify($rootScope.comments));
 	};
 
+	/**
+	 * [downVote Method that saves the downvote made in a comment]
+	 * @param  {number} $index [Index of the comment in order to add the vote to taht comment]
+	 * @return {null}        [Null]
+	 */
 	$scope.downVote = function($index){
 		var oldDown = $rootScope.comments[$index].downvote;
 		var newDown = oldDown + 1;

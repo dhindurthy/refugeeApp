@@ -1,5 +1,11 @@
 var refugeeServices = angular.module('refugeeServices', []);
 
+/**
+ * refugeeLogService
+ * This service handles the logging of errors 
+ * and is used in $http call's promises to ensure 
+ * the checking of errors
+ */
 refugeeServices.service('refugeeLogService', function () {
 
   this.logError = function (errorObject) {
@@ -13,6 +19,13 @@ refugeeServices.service('refugeeLogService', function () {
   
 });
 
+/**
+ * translationService
+ * Service to add translation to the exisiting 
+ * english words to various different languages user desires to.
+ * Developer/user has to provide the transalated words though
+ * 
+ */
 refugeeServices.service('translationService', function($resource) {  
 
     this.getTranslation = function($scope, language) {

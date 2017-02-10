@@ -6,6 +6,10 @@ refugeeControllers.controller('homeController', ['$location','$rootScope','$scop
 		$location.path('/refugees');
 	};
 
+    /**
+     * [data2012 Array of data of refugees in 2012 by state]
+     * @type {Array}
+     */
 	var data2012 = [{"state":"Alabama","number":145},
 {"state":"Alaska","number":88},
 {"state":"Arizona","number":2234},
@@ -56,6 +60,10 @@ refugeeControllers.controller('homeController', ['$location','$rootScope','$scop
 {"state":"West Virginia","number":19},
 {"state":"Wisconsin","number":785}];
 
+/**
+ * [data2013 Array of data of refugees by state in 2013]
+ * @type {Array}
+ */
 var data2013=[
     {"state":"Alabama","number":129},
 {"state":"Alaska","number":106},
@@ -108,6 +116,10 @@ var data2013=[
 {"state":"West Virginia","number":25},
 {"state":"Wisconsin","number":946}];
 
+/**
+ * [data2014 Array of data of refugees by state in 2014]
+ * @type {Array}
+ */
 var data2014 = [{"state":"Alabama","number":107},
 {"state":"Alaska","number":141},
 {"state":"Arizona","number":2964},
@@ -158,6 +170,11 @@ var data2014 = [{"state":"Alabama","number":107},
 {"state":"West Virginia","number":28},
 {"state":"Wisconsin","number":1132}];
 
+/**
+ * [statesChart Method to draw the charts in home page for years by state]
+ * @param  {Array} data [Array of data needs to be given]
+ * @return {null}      [Null]
+ */
 	$scope.statesChart = function(data){
 		// Make codes uppercase to match the map data
         $.each(data, function () {
@@ -220,6 +237,10 @@ var data2014 = [{"state":"Alabama","number":107},
         });
 	};
 
+    /**
+     * Below methods are to draw differennt charts 
+     * simultaneously one aftre other when initially home page loads
+     */
     $timeout(function(){
         $scope.year = "2011";
         //$scope.statesChart(data2011)

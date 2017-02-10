@@ -34,6 +34,10 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 		$location.path('/refugeeadd');
 	};
 
+	/**
+	 * [archive Archives the refugees]
+	 * @return {null} [Null]
+	 */
 	$scope.archive = function() {
 		var oldRefugees = $rootScope.refugees;
 		$rootScope.refugees = [];
@@ -44,6 +48,12 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 		});
 		localStorage.setItem('refugees', JSON.stringify($rootScope.refugees));
 	};
+
+	/**
+	 * [archiveIndividual Archives the invidual refugee]
+	 * @param  {number} $index [Index of the refugees thats archived]
+	 * @return {null}        [Null]
+	 */
 	$scope.archiveIndividual = function($index) {
 		var oldRefugees = $rootScope.refugees;
 		$rootScope.refugees[$index].done=true;
@@ -56,12 +66,22 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 		localStorage.setItem('refugees', JSON.stringify($rootScope.refugees));
 	};
 
+	/**
+	 * [editRefugee Function to navigate to edit refugee page]
+	 * @param  {number} $index [Index of refugee user wants to edit]
+	 * @return {null}        [Null]
+	 */
 	$scope.editRefugee = function($index) {
 		$rootScope.editedIndex=$index;
 		//$rootScope.refugees[$index].done=true;
 		$location.path('/refugeeedit');
 	};
 
+	/**
+	 * [infoRefugee Info of the refugee]
+	 * @param  {Number} $index [Index of refigee for whom the info is shown]
+	 * @return {Null}        [Null]
+	 */
 	$scope.infoRefugee = function($index) {
 		$rootScope.infoIndex=$index;
 		$scope.refugeeInfo = true;
@@ -74,6 +94,12 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 						"refugeeNumberInfo":$scope.refugeeNumberInfo,"refugeeReasonInfo":$scope.refugeeReasonInfo};
 		//$location.path('/refugeeedit');
 	};
+
+	/**
+	 * [closeInfo Method to close the info section]
+	 * @param  {Number} $index [Index of the refugee item in array]
+	 * @return {null}        [Null]
+	 */
 	$scope.closeInfo = function($index){
 		$scope.refugeeCountryInfo='';
 		$scope.refugeeYearInfo='';
@@ -97,6 +123,10 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 		$scope.year = year;
 	};
 
+	/**
+	 * [dataChart Chart that instantly updates and new data entered ]
+	 * @return {null} [Null]
+	 */
 	$scope.dataChart = function() {
 		var chart;
 		$(document).ready(function() {
@@ -189,6 +219,12 @@ refugeeControllers.controller('refugeesController', ['$location','$rootScope','$
 			}, 500);
 	};
 
+	/**
+	 * [data201x Methods that draw the charts for individual 
+	 * years thats displayed on refugees page and is instantly 
+	 * updated when user enters/delets/edits  data]
+	 * @return {null} [Null]
+	 */
 	$scope.data2011 = function(){
 		$scope.dataDivision("2011");
 		$scope.lineChart();
